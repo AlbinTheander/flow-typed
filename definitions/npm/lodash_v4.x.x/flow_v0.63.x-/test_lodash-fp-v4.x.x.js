@@ -4,6 +4,7 @@ import assignIn from 'lodash/fp/assignIn';
 import extend from 'lodash/fp/extend';
 import sortedLastIndexBy from 'lodash/fp/sortedLastIndexBy';
 import sortedIndexBy from 'lodash/fp/sortedIndexBy';
+import sortedUniqBy from 'lodash/fp/sortedUniqBy';
 import range from 'lodash/fp/range';
 import isEqual from 'lodash/fp/isEqual';
 import clone from 'lodash/fp/clone';
@@ -282,6 +283,13 @@ sortedIndexBy('x')({ 'x': 4 }, [{ 'x': 4 }, { 'x': 5 }]);
  */
 sortedLastIndexBy(function(o) { return o.x; }, { 'x': 4 }, [{ 'x': 4 }, { 'x': 5 }]);
 sortedLastIndexBy('x', { 'x': 4 }, [{ 'x': 4 }, { 'x': 5 }]);
+
+/**
+ * sortedUniqBy
+ */
+sortedUniqBy(function(o) { return o.x; })([{ 'x': 4 }, { 'x': 4 }, { 'x': 5 }]);
+sortedUniqBy('x')([{ 'x': 4 }, { 'x': 4 }, { 'x': 5 }]);
+
 
 /**
  * extend
